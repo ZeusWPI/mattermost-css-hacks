@@ -455,30 +455,6 @@ var PluginClass = function () {
   __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_createClass___default()(PluginClass, [{
     key: 'initialize',
     value: function initialize(registerComponents, store) {
-
-      var username = "";
-
-      try {
-        var state = store.getState();
-        var currentUser = state.entities.users.profiles[state.entities.users.currentUserId];
-        username = currentUser && currentUser.username;
-      }
-      catch(err) {
-        // lets not explode here
-      }
-	    
-      if (username) {
-        var fontOverride = ["sam", "jomaxro", "jordan.vidrine"];
-
-        if (username.substr(username.length - 2) === "-v") {
-          username = username.substr(0, username.length - 2);
-        }
-
-        var override = fontOverride.indexOf(username) > -1;
-
-        global.document.body.setAttribute("data-hack-font", override.toString());
-      }
-	    
       var css = global.document.createElement("style");
       css.type = "text/css";
       css.innerHTML = $CSS$;
